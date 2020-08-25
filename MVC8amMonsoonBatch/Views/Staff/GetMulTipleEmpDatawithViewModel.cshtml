@@ -1,0 +1,13 @@
+﻿@model List<MVC8amMonsoonBatch.Models.EmployeeModel>
+@{
+    ViewBag.Title = "GetMulTipleEmpDatawithViewModel";
+}
+
+<h2>GetMulTipleEmpDatawithViewModel</h2>
+
+@foreach (var item in Model)
+{
+    @item.EmpId<br />
+    @item.EmpName<br />
+    @item.EmpSalary<br />
+}
