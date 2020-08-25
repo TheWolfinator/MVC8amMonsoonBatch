@@ -111,6 +111,9 @@ namespace MVC8amMonsoonBatch.Controllers
 
             return View(listobj );
         }
+        public ActionResult Test() {
+            return View();
+        }
 
     }
 }
