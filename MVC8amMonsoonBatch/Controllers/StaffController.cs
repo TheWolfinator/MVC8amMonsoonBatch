@@ -71,7 +71,7 @@ namespace MVC8amMonsoonBatch.Controllers
             return View();
         }
 
-        public ActionResult GetDataAnotherway() {
+        public ViewResult GetDataAnotherway() {
 
             EmployeeModel obj = new EmployeeModel();
             obj.EmpId = 1;
@@ -160,6 +160,32 @@ namespace MVC8amMonsoonBatch.Controllers
 
 
             return View(empdepobj);
+        }
+
+        public ViewResult GetView() {
+
+            EmployeeModel empobj = new EmployeeModel();
+            empobj.EmpId = 1;
+            empobj.EmpName = "Anna";
+            empobj.EmpSalary = 27000;
+
+            DepartmentModel deptobj = new DepartmentModel();
+            deptobj.DeptId = 1211;
+            deptobj.DeptName = "Develpoment";
+
+            EmpDeptDetail empdepobj = new EmpDeptDetail();
+            empdepobj.emp = empobj;
+            empdepobj.dep = deptobj;
+
+            return View("CustomizeModel", empdepobj);
+        }
+
+        public RedirectResult RedirectToUrl() {
+            return Redirect("http://www.yahoo.com");
+        }
+        public RedirectResult Redirect2ToUrl()
+        {
+            return Redirect("~/staff/GetView");
         }
     }
 }
