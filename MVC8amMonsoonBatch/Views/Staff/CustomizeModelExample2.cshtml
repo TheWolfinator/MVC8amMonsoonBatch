@@ -1,0 +1,33 @@
+﻿@model MVC8amMonsoonBatch.Models.EmpDeptDetail
+@{
+    ViewBag.Title = "CustomizeModelExample2";
+}
+
+<h2>CustomizeModelExample2</h2>
+
+<table class="table-bordered">
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>EmpSalary</th>
+    </tr>
+
+    @foreach (var item in Model.listemp)
+    {
+        <tr>
+            <td>
+                @item.EmpId
+            </td>
+            <td>
+                @item.EmpName
+            </td>
+            <td>
+                @item.EmpSalary
+            </td>
+        </tr>
+    }
+
+</table> 
+
+@Model.dep.DeptId <br />
+@Model.dep.DeptName 

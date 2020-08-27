@@ -139,6 +139,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DepartmentModel.cs" />
+    <Compile Include="Models\EmpDeptDetail.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -161,6 +163,8 @@
     <Content Include="Views\Staff\GetMulTipleEmpData.cshtml" />
     <Content Include="Views\Staff\GetDataAnotherway.cshtml" />
     <Content Include="Views\Staff\GetMulTipleEmpDatawithViewModel.cshtml" />
+    <Content Include="Views\Staff\CustomizeModel.cshtml" />
+    <Content Include="Views\Staff\CustomizeModelExample2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
