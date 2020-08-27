@@ -15,7 +15,7 @@ namespace MVC8amMonsoonBatch.Controllers
         }
 
 
-        public string GetId(int ? id)
+        public string GetId(int? id)
         {
             return "My Id is " + id;
         }
@@ -25,7 +25,7 @@ namespace MVC8amMonsoonBatch.Controllers
             return "My Name is " + Name;
         }
 
-        public ActionResult  Index()
+        public ActionResult Index()
         {
             return View("~/Views/Default/MyFirstMethod.cshtml");
         }
@@ -65,7 +65,7 @@ namespace MVC8amMonsoonBatch.Controllers
             listobj.Add(obj1);
             listobj.Add(obj2);
 
-            
+
             ViewBag.Empinfo = listobj;
 
             return View();
@@ -78,7 +78,7 @@ namespace MVC8amMonsoonBatch.Controllers
             obj.EmpName = "Suraj";
             obj.EmpSalary = 27000;
 
-             
+
 
             return View(obj);
         }
@@ -107,13 +107,10 @@ namespace MVC8amMonsoonBatch.Controllers
             listobj.Add(obj2);
 
 
-          
 
-            return View(listobj );
-        }
-        public ActionResult Test() {
-            return View();
-        }
 
+            return View(listobj);
+        }
+    
     }
 }
