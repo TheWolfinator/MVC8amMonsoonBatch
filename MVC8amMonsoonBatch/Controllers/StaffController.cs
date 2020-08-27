@@ -15,7 +15,7 @@ namespace MVC8amMonsoonBatch.Controllers
         }
 
 
-        public string GetId(int? id)
+        public string GetId(int ? id)
         {
             return "My Id is " + id;
         }
@@ -25,7 +25,7 @@ namespace MVC8amMonsoonBatch.Controllers
             return "My Name is " + Name;
         }
 
-        public ActionResult Index()
+        public ActionResult  Index()
         {
             return View("~/Views/Default/MyFirstMethod.cshtml");
         }
@@ -65,7 +65,7 @@ namespace MVC8amMonsoonBatch.Controllers
             listobj.Add(obj1);
             listobj.Add(obj2);
 
-
+            
             ViewBag.Empinfo = listobj;
 
             return View();
@@ -78,7 +78,7 @@ namespace MVC8amMonsoonBatch.Controllers
             obj.EmpName = "Suraj";
             obj.EmpSalary = 27000;
 
-
+             
 
             return View(obj);
         }
@@ -106,11 +106,60 @@ namespace MVC8amMonsoonBatch.Controllers
             listobj.Add(obj1);
             listobj.Add(obj2);
 
-
-
-
-            return View(listobj);
+            return View(listobj );
         }
-    
+        public ActionResult CustomizeModel() {
+
+            EmployeeModel empobj = new EmployeeModel();
+            empobj.EmpId = 1;
+            empobj.EmpName = "Anna";
+            empobj.EmpSalary = 27000;
+
+            DepartmentModel deptobj = new  DepartmentModel();
+            deptobj.DeptId = 1211;
+            deptobj.DeptName = "Develpoment";
+
+            EmpDeptDetail empdepobj = new EmpDeptDetail();
+            empdepobj.emp = empobj;
+            empdepobj.dep = deptobj;
+
+            return View(empdepobj);
+        }
+
+        public ActionResult CustomizeModelExample2()
+        {
+            List<EmployeeModel> listobj = new List<EmployeeModel>();
+
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Suraj";
+            obj.EmpSalary = 27000;
+
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Abhisek";
+            obj1.EmpSalary = 5699;
+
+            EmployeeModel obj2 = new EmployeeModel();
+            obj2.EmpId = 3;
+            obj2.EmpName = "Rambabu";
+            obj2.EmpSalary = 6540;
+
+            listobj.Add(obj);
+            listobj.Add(obj1);
+            listobj.Add(obj2);
+
+            DepartmentModel deptobj = new DepartmentModel();
+            deptobj.DeptId = 1211;
+            deptobj.DeptName = "Develpoment";
+
+            EmpDeptDetail empdepobj = new EmpDeptDetail();
+            empdepobj.listemp = listobj;
+            empdepobj.dep = deptobj;
+
+
+            return View(empdepobj);
+        }
     }
 }
