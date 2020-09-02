@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC8amMonsoonBatch.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,10 @@ namespace MVC8amMonsoonBatch.Controllers
         // GET: Default
         public ActionResult MyFirstMethod()
         {
+            return View();
+        }
+
+        public ActionResult GetView(int id) {
             return View();
         }
     }

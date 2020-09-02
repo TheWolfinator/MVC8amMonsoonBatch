@@ -13,7 +13,12 @@ namespace MVC8amMonsoonBatch
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            
+
+            routes.MapRoute(
+                name: "MyTestRoute",
+                url: "PizzaHouse/Cake",
+                defaults: new { controller = "staff", action = "GetData", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Defaultabhissshek",

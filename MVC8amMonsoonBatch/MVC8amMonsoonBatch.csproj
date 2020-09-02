@@ -143,6 +143,7 @@
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\EmpDeptDetail.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\Students.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +167,12 @@
     <Content Include="Views\Staff\GetMulTipleEmpDatawithViewModel.cshtml" />
     <Content Include="Views\Staff\CustomizeModel.cshtml" />
     <Content Include="Views\Staff\CustomizeModelExample2.cshtml" />
+    <Content Include="Views\Staff\getMyPartialView.cshtml" />
+    <Content Include="Views\Shared\_StudentName.cshtml" />
+    <Content Include="Views\Shared\_Languages.cshtml" />
+    <Content Include="Views\Default\GetView.cshtml" />
+    <Content Include="Views\Staff\getJsonData.cshtml" />
+    <Content Include="Views\Staff\getJsonData2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
