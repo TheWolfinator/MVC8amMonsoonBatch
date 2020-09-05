@@ -18,5 +18,24 @@ namespace AdoNetExample.Controllers
              
             return View(db.GetEmployee());
         }
+
+        [HttpGet]//Action verb
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(EmployeeModel empobj)
+        {
+            //int i = db.save(EmpName, EmpSalary);
+            int i = db.saveEmployee(empobj);
+            if (i > 0) {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }
