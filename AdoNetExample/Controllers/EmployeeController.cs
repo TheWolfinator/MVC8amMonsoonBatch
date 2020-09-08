@@ -15,7 +15,7 @@ namespace AdoNetExample.Controllers
 
         public ActionResult Index()
         {
-             
+
             return View(db.GetEmployee());
         }
 
@@ -24,12 +24,33 @@ namespace AdoNetExample.Controllers
         {
             return View();
         }
+        //[HttpPost]
+        //public ActionResult Create(EmployeeModel empobj)
+        //{
+        //    //int i = db.save(EmpName, EmpSalary);
+        //    int i = db.saveEmployee(empobj);
+        //    if (i > 0) {
+        //        return RedirectToAction("Index");
+        //    }
+        //    else
+        //    {
+        //        return View();
+        //    }
+        //}
+
+
         [HttpPost]
-        public ActionResult Create(EmployeeModel empobj)
+        public ActionResult Create(FormCollection frmObj)
         {
-            //int i = db.save(EmpName, EmpSalary);
+
+            EmployeeModel empobj = new EmployeeModel();
+            empobj.EmpName = frmObj["EmpName"];
+            empobj.EmpSalary = Convert.ToInt32(frmObj["EmpSalary"]);
+
+
             int i = db.saveEmployee(empobj);
-            if (i > 0) {
+            if (i > 0)
+            {
                 return RedirectToAction("Index");
             }
             else
@@ -37,5 +58,54 @@ namespace AdoNetExample.Controllers
                 return View();
             }
         }
+
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+          EmployeeModel emp= db.getEmployeeById(id);
+
+            return View(emp);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EmployeeModel emp)
+        {
+
+            int i = db.updateEmployee(emp);
+            if (i > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(emp);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            EmployeeModel emp = db.getEmployeeById(id);
+
+            return View(emp);
+        }
+
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+
+            int i = db.deleteEmployee(id);
+            if (i > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
     }
 }
