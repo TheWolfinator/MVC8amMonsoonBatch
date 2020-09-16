@@ -173,6 +173,10 @@
     <Content Include="Views\Default\GetView.cshtml" />
     <Content Include="Views\Staff\getJsonData.cshtml" />
     <Content Include="Views\Staff\getJsonData2.cshtml" />
+    <Content Include="Views\Shared\_bandLayout.cshtml" />
+    <Content Include="Views\Default\Home.cshtml" />
+    <Content Include="Views\Default\About.cshtml" />
+    <Content Include="Views\Default\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -182,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

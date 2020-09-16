@@ -18,5 +18,34 @@ namespace MVC8amMonsoonBatch.Controllers
         public ActionResult GetView(int id) {
             return View();
         }
+
+        public ActionResult Home() {
+            return View();
+        }
+
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
