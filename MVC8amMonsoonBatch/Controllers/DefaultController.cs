@@ -10,6 +10,8 @@ namespace MVC8amMonsoonBatch.Controllers
     public class DefaultController : Controller
     {
         // GET: Default
+
+        EmployeeEntities db = new EmployeeEntities();
         public ActionResult MyFirstMethod()
         {
             return View();
@@ -32,6 +34,13 @@ namespace MVC8amMonsoonBatch.Controllers
         public ActionResult Contact()
         {
             return View();
+        }
+
+        public ActionResult HtmlHelperExample() {
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpName = "Abhishek Kumar";
+            ViewBag.EmpList = new SelectList(db.employeeDetails, "EmpId", "EmpName");
+            return View(obj);
         }
 
 
