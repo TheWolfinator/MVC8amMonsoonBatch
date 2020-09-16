@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EA505B95-786A-45E5-BEFA-B3118015CB5E}</ProjectGuid>
+    <ProjectGuid>{D3E68E36-C87E-4D80-A4DD-896EF9C9E6CA}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVC8amMonsoonBatch</RootNamespace>
-    <AssemblyName>MVC8amMonsoonBatch</AssemblyName>
+    <RootNamespace>AdoNetExample</RootNamespace>
+    <AssemblyName>AdoNetExample</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -43,14 +43,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -84,8 +76,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -132,63 +122,26 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\Emp2Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Emp2Model.edmx</DependentUpon>
-      <LastGenOutput>Emp2Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Emp2Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Emp2Model.edmx</DependentUpon>
-      <LastGenOutput>Emp2Model.cs</LastGenOutput>
-    </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="Documents\ActionResult %281%29.pdf" />
-    <EntityDeploy Include="Models\Emp2Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Emp2Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Emp2Model.edmx.diagram">
-      <DependentUpon>Emp2Model.edmx</DependentUpon>
-    </Content>
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DepartmentModel.cs" />
-    <Compile Include="Models\Emp2Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Emp2Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Emp2Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Emp2Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Emp2Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Emp2Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EmpDeptDetail.cs" />
-    <Compile Include="Models\employeeDetail.cs">
-      <DependentUpon>Emp2Model.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\EmployeeContext.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
-    <Compile Include="Models\Students.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -199,30 +152,14 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Staff\Index.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Staff\TestView.cshtml" />
-    <Content Include="Views\Default\MyFirstMethod.cshtml" />
-    <Content Include="Views\Staff\GetData.cshtml" />
-    <Content Include="Views\Staff\GetMulTipleEmpData.cshtml" />
-    <Content Include="Views\Staff\GetDataAnotherway.cshtml" />
-    <Content Include="Views\Staff\GetMulTipleEmpDatawithViewModel.cshtml" />
-    <Content Include="Views\Staff\CustomizeModel.cshtml" />
-    <Content Include="Views\Staff\CustomizeModelExample2.cshtml" />
-    <Content Include="Views\Staff\getMyPartialView.cshtml" />
-    <Content Include="Views\Shared\_StudentName.cshtml" />
-    <Content Include="Views\Shared\_Languages.cshtml" />
-    <Content Include="Views\Default\GetView.cshtml" />
-    <Content Include="Views\Staff\getJsonData.cshtml" />
-    <Content Include="Views\Staff\getJsonData2.cshtml" />
-    <Content Include="Views\Shared\_bandLayout.cshtml" />
-    <Content Include="Views\Default\Home.cshtml" />
-    <Content Include="Views\Default\About.cshtml" />
-    <Content Include="Views\Default\Contact.cshtml" />
-    <Content Include="Views\Default\HtmlHelperExample.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -232,10 +169,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -250,9 +183,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59680</DevelopmentServerPort>
+          <DevelopmentServerPort>65034</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59680/</IISUrl>
+          <IISUrl>http://localhost:65034/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

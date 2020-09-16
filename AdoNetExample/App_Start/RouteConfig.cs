@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace MVC8amMonsoonBatch
+namespace AdoNetExample
 {
     public class RouteConfig
     {
@@ -13,17 +13,10 @@ namespace MVC8amMonsoonBatch
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-
             routes.MapRoute(
-                name: "MyTestRoute",
-                url: "PizzaHouse/Cake",
-                defaults: new { controller = "staff", action = "GetData", id = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
-                name: "Defaultabhissshek",
+                name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "staff", action = "Welcome", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

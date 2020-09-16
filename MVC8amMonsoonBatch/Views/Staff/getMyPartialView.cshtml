@@ -1,0 +1,10 @@
+﻿@model MVC8amMonsoonBatch.Models.Students
+@{
+    ViewBag.Title = "Student Information";
+}
+<h2>StudentName</h2>
+@Html.Partial("_StudentName",Model)
+<h2>Languages</h2>
+@{Html.RenderPartial("_Languages");}
+
+

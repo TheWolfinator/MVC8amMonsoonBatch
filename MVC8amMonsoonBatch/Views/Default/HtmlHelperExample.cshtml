@@ -1,0 +1,32 @@
+﻿@model MVC8amMonsoonBatch.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlHelperExample";
+}
+<style>
+    .test {
+    font-size:larger;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight:800;
+    }
+</style>
+<script>
+    function fun() {
+
+        alert('SomeOne Clicked Me');
+    }
+</script>
+
+
+<h2>HtmlHelperExample</h2>
+
+@Html.LabelFor(s=>s.EmpName)
+<input type="text" id="firstName" name="firstName" 
+       value="Abhishek" style="color:gold;background-color:black;" class="test" onclick="fun()" /><br />
+
+@Html.TextBox("lastName",Model.EmpName,new { style = "color:gold;background-color:black;", @class="test", onclick = "fun()" })<br />
+
+@Html.TextBoxFor(x=>x.EmpName,new { style = "color:gold;background-color:black;", @class = "test", onclick = "fun()" })<br />
+
+@Html.DropDownList("EmpList")
+
+
