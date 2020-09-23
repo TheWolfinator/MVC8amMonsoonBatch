@@ -28,5 +28,11 @@
 @Html.TextBoxFor(x=>x.EmpName,new { style = "color:gold;background-color:black;", @class = "test", onclick = "fun()" })<br />
 
 @Html.DropDownList("EmpList")
+@Html.DropDownList("Emp",(IEnumerable<SelectListItem>)ViewBag.EmpList,"Select Employee")
+@Html.DropDownList("EmpInfo",new List<SelectListItem>() {
+    new SelectListItem {Text="Avinash",Value="1" },
+    new SelectListItem {Text="Bhaskar",Value="2" }
+
+})
 
 
