@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="CustomControl\myHtmlHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -233,6 +234,8 @@
     <Content Include="Views\Default\Contact.cshtml" />
     <Content Include="Views\Default\HtmlHelperExample.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Staff\getCustomHelper.cshtml" />
+    <Content Include="Views\Staff\getExTempdata2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
