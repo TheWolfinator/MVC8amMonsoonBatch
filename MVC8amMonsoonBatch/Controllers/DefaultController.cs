@@ -67,13 +67,14 @@ namespace MVC8amMonsoonBatch.Controllers
 
 
 
-
-
-
-
-
-
-
-
+        public ActionResult ValidationExample()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ValidationExample(RegisterModel obj)
+        {
+            return View(obj);
+        }
     }
 }
