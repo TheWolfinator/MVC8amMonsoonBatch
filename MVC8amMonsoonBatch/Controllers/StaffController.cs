@@ -12,6 +12,7 @@ namespace MVC8amMonsoonBatch.Controllers
         // GET: Staff
         public string Welcome()
         {
+          
             return "Welcome to New World of MVC";
         }
 
@@ -40,6 +41,14 @@ namespace MVC8amMonsoonBatch.Controllers
             obj.EmpSalary = 27000;
 
             ViewBag.Empinfo = obj;
+
+            ViewData["hi"] = "asdf";
+
+            return RedirectToAction("GetData2");
+        }
+        public ActionResult GetData2()
+        {
+          string s= (ViewData["hi"]).ToString();
 
             return View();
         }
@@ -315,6 +324,23 @@ namespace MVC8amMonsoonBatch.Controllers
             //listobj.Add(obj2);
 
             return View("getJsonData2");
+        }
+
+        public ActionResult getCustomHelper()
+        {
+            return View();
+        }
+
+        public ActionResult getExTempdata() {
+            TempData["Name"] = "shiva";
+          return RedirectToAction("getExTempdata2");
+        }
+        public ActionResult getExTempdata2()
+        {
+            ViewBag.test = TempData["Name"];
+            TempData.Keep();
+
+            return View();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace CodeFirstApproach
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EmployeeContext>());
+            
         }
     }
 }

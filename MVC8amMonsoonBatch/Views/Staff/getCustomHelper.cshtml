@@ -1,0 +1,21 @@
+﻿@using MVC8amMonsoonBatch.CustomControl
+@model MVC8amMonsoonBatch.Models.EmployeeModel
+@{
+    ViewBag.Title = "getCustomHelper";
+}
+
+<h2>getCustomHelper</h2>
+
+@Html.EditorForModel(Model)
+
+@myHtmlHelper.MyLabel("I Accept the Agreement")<br />
+@Html.createUrControl("text")<br />
+@Html.createUrControl("file")<br />
+@Html.createUrControl("checkbox")<br />
+
+
+@helper labelbyrazzorcode(string content)
+{
+    <label>@content</label>
+}
+@labelbyrazzorcode("hi this is ali")

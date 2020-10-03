@@ -1,0 +1,75 @@
+﻿@model IEnumerable<AdminEcom.Models.USP_Admin_GetProductDetails_Result>
+
+@{
+    ViewBag.Title = "ViewProduct";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+
+
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+      
+        <h2>ViewProduct</h2>
+
+    </div>
+    <div class="panel-body">
+
+        @Html.ActionLink("Create", "Action", "Controller", routeValues: null, htmlAttributes: new { @class = "btn btn-info btn-md create", style = "white-space: normal" })
+        <br />
+
+
+        <table id="tab" class="table datatable">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Category Name
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        &nbsp;
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            &#8377 @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td>
+                            <img src="~/img/products/@Url.Content(@item.ImageName)" style="height:100px;width:100px;" />
+
+                        </td>
+                        <td> @Html.ActionLink("Edit", "Edit", new
+                    { id = item.ProductId}, htmlAttributes: new { @class = "btn btn-info btn-md", style = "white-space: normal" })</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<AdminEcom.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+ 
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Categories</h3>
+
+    </div>
+    <div class="panel-body">
+        @Html.ActionLink("Create Category", "Create", routeValues: null, htmlAttributes: new { @class = "btn btn-info btn-md create", style = "white-space: normal" })
+        <br/>
+        <table id="tab" class="table datatable">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CategoryName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CategoryDescription)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreationDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UpdationDate)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreationDate, "{0:dd/MM/yyyy}")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UpdationDate, "{0:dd/MM/yyyy}")
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, htmlAttributes: new { @class = "btn btn-info btn-md", style = "white-space: normal" })
+
+                        </td>
+                    </tr>
+                </tbody>
+            }
+
+        </table>
+        </div>
+</div>
