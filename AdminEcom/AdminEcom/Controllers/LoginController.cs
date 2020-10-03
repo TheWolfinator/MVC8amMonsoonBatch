@@ -30,5 +30,9 @@ namespace AdminEcom.Controllers
             }
             return View(model);
         }
+        public ActionResult TestLayout()
+        {
+            return View();
+        }
     }
 }
