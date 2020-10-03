@@ -1,0 +1,78 @@
+﻿@model AdminEcom.Models.Category
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-8">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend> Add New Category </legend>
+
+                <div class="col-md-2">
+                    @Html.LabelFor(model => model.CategoryName)
+                </div>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.CategoryName, null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CategoryName)
+                </div>
+
+                <div class="col-md-2">
+                    @Html.LabelFor(model => model.CategoryDescription)
+                </div>
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.CategoryDescription, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CategoryDescription)
+                </div>
+
+                @* <div class="class="col-md-2"">
+                        @Html.LabelFor(model => model.CreationDate)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.CreationDate)
+                        @Html.ValidationMessageFor(model => model.CreationDate)
+                    </div>*@
+
+                @*  <div class="class="col-md-2"">
+                        @Html.LabelFor(model => model.UpdationDate)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.UpdationDate)
+                        @Html.ValidationMessageFor(model => model.UpdationDate)
+                    </div>*@
+
+                <div class="col-md-2">
+                    @Html.LabelFor(model => model.CategoryActive)
+                </div>
+                <div class="col-md-10">
+                    @*  @Html.EditorFor(model => model.CategoryActive)*@
+                    @* @Html.DropDownListFor(model => model.CategoryActive, new SelectList(Enum.GetValues(typeof(Gender)))")
+                        @Html.ValidationMessageFor(model => model.ISActive)
+                    *@
+                    @*    @Html.DropDownListFor(model=>model.CategoryActive,new SelectList(new List<SelectListItem>{ new SelectListItem {Text="Active",Value="True"},new SelectListItem {Text="Dactive",Value="False"}}))
+                    *@
+                    @Html.DropDownListFor(model => model.CategoryActive, new List<SelectListItem> { new SelectListItem { Text = "Active", Value = "True" }, new SelectListItem { Text = "Dactive", Value = "False" } }, null, new { @class = "form-control" })
+
+                </div>
+
+                <div style="margin-top:20px;margin-bottom:20px;" class="col-md-10">
+                    <input type="submit" value="Create" class="btn btn-info" />
+                </div>
+            </fieldset>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+    @*@section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }*@
