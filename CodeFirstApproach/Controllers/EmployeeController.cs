@@ -11,7 +11,7 @@ namespace CodeFirstApproach.Controllers
     public class EmployeeController : Controller
     {
         EmployeeContext db = new EmployeeContext();
-        // GET: Employee 1st Oct' 2020 GitHub 
+        // GET: Employee 5th Oct' 2020 GitHub 
         public ActionResult Index()
         {
 
