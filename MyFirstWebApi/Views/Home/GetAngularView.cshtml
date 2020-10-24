@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "GetAngularView";
+}
+
+ 
+ 
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/MyController.js"></script>
+<h2>GetAngularView</h2>
+<div ng-app="myApp" ng-controller="myCtrl">
+    {{2+2}}
+    <input type="text" ng-model="EmpName09" />
+    {{EmpName}}
+    <span ng-bind="EmpName"></span>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <table class="table-bordered">
+            <tr>
+                <th>DeptId</th>
+                <th>EmpId</th>
+                <th>EmpName</th>
+                <th>EmpSalary</th>
+                <th>Action</th>
+            </tr>
+            <tr ng-repeat="x in EmployeeData">
+                <td>{{x.DeptId}}</td>
+                <td>{{x.EmpId}}</td>
+                <td>{{x.EmpName}}</td>
+                <td>{{x.EmpSalary}}</td>
+                <td><a ng-click="Edit(x)">Edit</a></td>
+</tr>
+        </table>
+
+
+        <br />
+
+        <form>
+            <label>DeptId</label>
+        <input type="hidden" ng-model="EmpId" />
+            <input type="text" ng-model="DeptId" /><br />
+            <label>EmpName</label>
+            <input type="text" ng-model="EmpName" /><br />
+            <label>EmpSalary</label>
+            <input type="text" ng-model="EmpSalary" /><br />
+            <input type="button" value="Save" ng-click="Save()" />
+        </form></div>
+
+</div>
+

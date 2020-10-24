@@ -1,4 +1,5 @@
-﻿using CodeFirstApproach.Models;
+﻿using CodeFirstApproach.App_Start;
+using CodeFirstApproach.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,6 +16,7 @@ namespace CodeFirstApproach
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            FilterConfig.RegisterGlobalFilter(GlobalFilters.Filters);
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EmployeeContext>());
             
         }

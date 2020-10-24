@@ -85,6 +85,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -131,11 +133,28 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\DepartmentModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DepartmentModel.edmx</DependentUpon>
+      <LastGenOutput>DepartmentModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DepartmentModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DepartmentModel.edmx</DependentUpon>
+      <LastGenOutput>DepartmentModel.cs</LastGenOutput>
+    </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <EntityDeploy Include="Models\DepartmentModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DepartmentModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DepartmentModel.edmx.diagram">
+      <DependentUpon>DepartmentModel.edmx</DependentUpon>
+    </Content>
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -150,13 +169,31 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DepartmentModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepartmentModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepartmentModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\EmployeeContext.cs" />
-    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs">
+      <DependentUpon>DepartmentModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +209,11 @@
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Employee\FavoritePlayer.cshtml" />
+    <Content Include="Views\Employee\GetMyTeam.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Error2.cshtml" />
+    <Content Include="Views\Employee\GetAngularView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -181,6 +223,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FilterExample\FilterExample.csproj">
+      <Project>{99DDD1B1-5C33-4356-AEFD-924E754D06C6}</Project>
+      <Name>FilterExample</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

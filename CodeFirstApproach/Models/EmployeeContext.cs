@@ -8,7 +8,7 @@ namespace CodeFirstApproach.Models
 {
     public class EmployeeContext:DbContext
     {
-        public EmployeeContext():base("ConStr")
+        public EmployeeContext():base("EmployeeEntities")
         {
 
         }

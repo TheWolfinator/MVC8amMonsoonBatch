@@ -1,4 +1,5 @@
-﻿using MVC8amMonsoonBatch.Models;
+﻿using FilterExample.Filter;
+using MVC8amMonsoonBatch.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,12 @@ using System.Web.Mvc;
 
 namespace MVC8amMonsoonBatch.Controllers
 {
+
+      [MyFilter]
     public class StaffController : Controller
     {
         // GET: Staff
+      
         public string Welcome()
         {
           
@@ -340,6 +344,13 @@ namespace MVC8amMonsoonBatch.Controllers
             ViewBag.test = TempData["Name"];
             TempData.Keep();
 
+            return View();
+        }
+
+
+        public ActionResult TestFilter()
+        {
+            
             return View();
         }
     }

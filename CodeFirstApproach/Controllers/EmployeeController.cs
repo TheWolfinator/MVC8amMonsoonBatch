@@ -5,9 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using CodeFirstApproach.Models;
 using System.Data.Entity;
+using FilterExample.Filter;
 
 namespace CodeFirstApproach.Controllers
 {
+
+    //[HandleError]
     public class EmployeeController : Controller
     {
         EmployeeContext db = new EmployeeContext();
@@ -80,6 +83,32 @@ namespace CodeFirstApproach.Controllers
             {
                 return View();
             }
+        }
+
+        [MyFilter]
+        public ActionResult FavoritePlayer()
+        {
+            ViewBag.Player = "Rishabh Panth";
+            return View();
+        }
+
+        public ActionResult GetMyTeam(string id)
+        {
+            try
+            {
+                int Team = Convert.ToInt32(id);
+                ViewBag.team = Team;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return View();
+        }
+
+        public ActionResult GetAngularView() {
+
+            return View();
         }
     }
 }
